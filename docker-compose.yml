@@ -1,0 +1,26 @@
+version: '2'
+services:
+    mongo:
+        container_name: mongo
+        image: dhermanns/rpi-mongo
+        volumes:
+            - ./data/db:/data/db
+        ports:
+            - 27017:27017
+        restart: always
+    nodered:
+        container_name: nodered
+        image: easypi/node-red-arm
+        volumes:
+            - ./data:/root/.node-red
+        ports:
+            - 1880:1880
+        privileged: yes
+        restart: always
+    mosquitto:
+        container_name: mosquitto
+        image: easypi/mosquitto-arm
+        ports:
+            - 16883:1883
+        restart: always
+
