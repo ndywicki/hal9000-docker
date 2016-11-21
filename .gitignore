@@ -1,5 +1,5 @@
 images/
-data/db/
+data/db/*
 data/node_modules/
 data/.flows*
 data/.config.json
